@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import MeUI from "../src/index";
+import MeUI from "../lib/me-vue-ui.common";
 
 import hljs from "highlight.js";
 import DemoBlock from "./components/demo-block";
