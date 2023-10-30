@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="demo-block"
-    :class="[blockClass, { hover: hovering }]"
-    @mouseenter="hovering = true"
-    @mouseleave="hovering = false"
-  >
+  <div class="demo-block" :class="[blockClass, { hover: hovering }]" @mouseenter="hovering = true" @mouseleave="hovering = false">
     <div class="source">
       <slot name="source"></slot>
     </div>
@@ -16,11 +11,7 @@
         <slot name="highlight"></slot>
       </div>
     </div>
-    <div
-      class="demo-block-control"
-      ref="control"
-      @click="isExpanded = !isExpanded"
-    >
+    <div class="demo-block-control" ref="control" @click="isExpanded = !isExpanded">
       <span>{{ controlText }}</span>
     </div>
   </div>
@@ -33,8 +24,7 @@
   transition: 0.2s;
 }
 .demo-block.hover {
-  box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
-    0 2px 4px 0 rgba(232, 237, 250, 0.5);
+  box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
 }
 .demo-block code {
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
@@ -124,40 +114,36 @@ export default {
     return {
       hovering: false,
       isExpanded: false,
-    };
+    }
   },
   computed: {
     blockClass() {
-      return ` demo-${this.$router.currentRoute.path.split("/").pop()}`;
+      return ` demo-${this.$router.currentRoute.path.split('/').pop()}`
     },
     controlText() {
-      return this.isExpanded ? "隐藏代码" : "显示代码";
+      return this.isExpanded ? '隐藏代码' : '显示代码'
     },
     codeArea() {
-      return this.$el.getElementsByClassName("meta")[0];
+      return this.$el.getElementsByClassName('meta')[0]
     },
     codeAreaHeight() {
-      if (this.$el.getElementsByClassName("description").length > 0) {
-        return (
-          this.$el.getElementsByClassName("description")[0].clientHeight +
-          this.$el.getElementsByClassName("highlight")[0].clientHeight +
-          20
-        );
+      if (this.$el.getElementsByClassName('description').length > 0) {
+        return this.$el.getElementsByClassName('description')[0].clientHeight + this.$el.getElementsByClassName('highlight')[0].clientHeight + 20
       }
-      return this.$el.getElementsByClassName("highlight")[0].clientHeight;
+      return this.$el.getElementsByClassName('highlight')[0].clientHeight
     },
   },
   watch: {
     isExpanded(val) {
-      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : "0";
+      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
       if (!val) {
-        this.$refs.control.style.left = "0";
-        return;
+        this.$refs.control.style.left = '0'
+        return
       }
     },
   },
   created() {},
   mounted() {},
   methods: {},
-};
+}
 </script>

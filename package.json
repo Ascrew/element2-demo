@@ -9,7 +9,8 @@
     "build:docs": "cross-env NODE_ENV=development webpack --config build/webpack.docs.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js",
     "deploy": "gh-pages -d dist",
-    "dist": "webpack --config build/webpack.common.js"
+    "dist": "webpack --config build/webpack.common.js",
+    "lint-fix" : "eslint --fix --ext .js --ext .jsx --ext .vue src/ examples/ test/ "
   },
   "repository": {
     "type": "git",

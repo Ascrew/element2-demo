@@ -25,14 +25,14 @@
 
 <script>
 export default {
-  name: "MeLoading",
+  name: 'MeLoading',
   props: {
     loadingText: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-};
+}
 </script>
 
 <style>

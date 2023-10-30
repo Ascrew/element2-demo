@@ -6,16 +6,16 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "prettier"],
-  plugins: ["vue", "prettier"],
+  extends: ['plugin:vue/essential', 'eslint:recommended', 'prettier'],
+  plugins: ['vue', 'prettier'],
   rules: {
-    "prettier/prettier": "error",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
+    'prettier/prettier': 'error',
+    'arrow-body-style': 'off',
+    'prefer-arrow-callback': 'off',
   },
-};
+}
